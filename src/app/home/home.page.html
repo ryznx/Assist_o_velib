@@ -1,14 +1,46 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+    <div class="header-img">
+        <ion-img src="../../assets/bicycle.png" style="width: 35%" id="img"></ion-img>
+    </div><br/>
+    <form (ngSubmit)="validateForm()">
+      <ion-item>
+          <ion-icon name="pin"></ion-icon>
+          <ion-input required [(ngModel)]="trajet.depart" name="depart" placeholder="Point de départ"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-icon name="flag"></ion-icon>
+          <ion-input required [(ngModel)]="trajet.arrivee" name="arrivee" placeholder="Point d'arrivée"></ion-input>
+        </ion-item><br/>
+      <ion-list>
+        <ion-list-header>le trajet</ion-list-header>
+      
+        <ion-item>
+          <ion-label>Distance borne</ion-label>
+          <ion-select placeholder="En km" name="distance">
+            <ion-select-option value="5">5 km</ion-select-option>
+            <ion-select-option value="10">10 km</ion-select-option>
+            <ion-select-option value="15">15 km</ion-select-option>
+            <ion-select-option value="20">20 km</ion-select-option>
+            <ion-select-option value="25">25 km</ion-select-option>
+          </ion-select>
+        </ion-item>
+      
+        <ion-item>
+          <ion-checkbox color="primary" name="transports"></ion-checkbox>
+          Transports en commun
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Partir à</ion-label>
+          <ion-datetime [(ngModel)]="trajet.heure" displayFormat="HH:mm" name="heure_depart"></ion-datetime>
+        </ion-item>
+      
+      </ion-list>
+      <ion-button expand="block" type="submit">🚀 GO !</ion-button>
+    </form>
   </div>
 </ion-content>

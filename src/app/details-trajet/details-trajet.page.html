@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Note trajet</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list class="ios list-ios hydrated">
+        <ion-list-header class="ios hydrated">
+          Qu'avez vous penser du trajet ?
+        </ion-list-header>
+        <ion-item class="item-label item ios in-list ion-focusable hydrated">
+          <ion-label class="sc-ion-label-ios-h sc-ion-label-ios-s ios hydrated">Le nombre de vélibs prévus<br/>correspondait-il ?</ion-label>
+        </ion-item>
+        <div style="text-align: center">
+          <ion-select placeholder="Choisissez">
+            <ion-select-option value="5">Oui</ion-select-option>
+            <ion-select-option value="10">Non</ion-select-option>
+          </ion-select>
+        </div>
+
+        <ion-item class="item-label item ios in-list ion-focusable hydrated">
+          <ion-label class="sc-ion-label-ios-h sc-ion-label-ios-s ios hydrated">Pensez-vous avoir gagné du<br/>temps sur votre trajet comparé<br/>à d'habitude ?</ion-label>
+        </ion-item>
+        <div style="text-align: center">
+          <ion-select placeholder="Choisissez">
+            <ion-select-option value="5">Oui</ion-select-option>
+            <ion-select-option value="10">Non</ion-select-option>
+          </ion-select>
+        </div>
+
+        <ion-item class="item-label item ios in-list ion-focusable hydrated">
+          <ion-label class="sc-ion-label-ios-h sc-ion-label-ios-s ios hydrated">Notez votre trajet dans<br/>l'ensemble</ion-label>
+        </ion-item>
+        <div style="text-align: center">
+          <ionic4-star-rating #rating
+          activeIcon = "ios-star"
+          defaultIcon = "ios-star-outline"
+          activeColor = "#488aff" 
+          defaultColor = "#f4f4f4"
+          readonly="false"
+          rating="3"
+          fontSize = "32px">
+          </ionic4-star-rating>
+        </div>
+      </ion-list>
+
+  <ion-button expand="block" type="submit" (click)="sendRating()">Envoyer</ion-button>
+</ion-content>
