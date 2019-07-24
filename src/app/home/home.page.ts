@@ -32,8 +32,8 @@ export class HomePage {
       if (this.trajet.heure == null) {
         this.trajet.heure = "2019-07-23T10:38:30.365+02:00"
       }
-      let addr_dep = this.http.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + this.trajet.depart + '&key=AIzaSyCo0cyyU87aL7h3W3CqHXXK5oCnqNF8q5k')
-      let addr_arr = this.http.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + this.trajet.arrivee + '&key=AIzaSyCo0cyyU87aL7h3W3CqHXXK5oCnqNF8q5k')
+      let addr_dep = this.http.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + this.trajet.depart + '&key=API_KEY_HERE')
+      let addr_arr = this.http.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + this.trajet.arrivee + '&key=API_KEY_HERE')
   
       forkJoin([addr_dep, addr_arr]).subscribe( (res: any) => {
         if (res['0'].status == "OK" && res['1'].status == "OK") {
